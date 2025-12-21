@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard Heise | /personal</title>
+    <style>
+        /* --- Variáveis Globais --- */
+        :root {
+            --bg-page: #09090b;
+            --bg-card: #18181b;
+            --border: #27272a;
+            --text-main: #f4f4f5;
+            --text-muted: #a1a1aa;
+            --accent-green: #4ade80;
+            /* Verde Terminal */
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+            --nav-height: 60px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            padding-bottom: 4rem;
+            padding-top: var(--nav-height);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background: rgba(9, 9, 11, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-content {
+            max-width: 1024px;
+            width: 100%;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-main);
+        }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .page-header {
+            margin-top: 4rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .page-title {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+        }
+
+        .page-subtitle {
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+
+        /* --- Grid de Interesses --- */
+        .interests-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (min-width: 768px) {
+            .interests-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .interest-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 160px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interest-card:hover {
+            border-color: #52525b;
+            transform: translateY(-4px);
+        }
+
+        .card-letterboxd:hover {
+            border-color: #00e054;
+        }
+
+        .card-letterboxd .icon {
+            color: #00e054;
+        }
+
+        .card-aoty:hover {
+            border-color: #429bdf;
+        }
+
+        .card-aoty .icon {
+            color: #429bdf;
+        }
+
+        .card-insta:hover {
+            border-color: #e1306c;
+        }
+
+        .card-insta .icon {
+            color: #e1306c;
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-stat {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .card-link-text {
+            font-size: 0.8rem;
+            margin-top: auto;
+            font-family: var(--font-mono);
+            opacity: 0.6;
+        }
+
+        /* --- Área de Poemas (Terminal) --- */
+        .poetry-section {
+            margin-top: 4rem;
+        }
+
+        .poetry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 1rem;
+        }
+
+        .poetry-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .terminal-window {
+            background: #121212;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: var(--font-mono);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            min-height: 300px;
+        }
+
+        /* Barra de Comandos do Terminal */
+        .terminal-bar {
+            background: #18181b;
+            /* Um pouco mais claro que o fundo */
+            border-bottom: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .prompt-symbol {
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        /* Botões Estilo Comando */
+        .cmd-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-family: inherit;
+            font-size: inherit;
+            cursor: pointer;
+            padding: 2px 8px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .cmd-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .cmd-btn.active {
+            color: var(--accent-green);
+            background: rgba(74, 222, 128, 0.1);
+        }
+
+        /* Conteúdo do Poema */
+        .terminal-content {
+            padding: 2rem;
+            color: #d4d4d8;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Elementos Dinâmicos */
+        .poem-title-display {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .poem-date {
+            color: #52525b;
+            font-size: 0.75rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .poem-body {
+            margin-bottom: 2rem;
+            white-space: pre-wrap;
+            /* Mantém a formatação visual dos poemas */
+        }
+
+        /* Cursor piscando */
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1.2em;
+            background: var(--text-muted);
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#projects">Projetos</a></li>
+                <li><a href="index.html#professional">Profissional</a></li>
+                <li><a href="index.html#academic">Acadêmico</a></li>
+                <li><a href="#" class="active">Pessoal</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <header class="page-header">
+            <h1 class="page-title">/home/richardheise/personal</h1>
+            <p class="page-subtitle">Interesses, hobbies e buffer de ideias</p>
+        </header>
+
+        <div class="interests-grid">
+            <a href="https://letterboxd.com/RHeise" target="_blank" class="interest-card card-letterboxd">
+                <div>
+                    <div class="card-title">
+                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polygon points="10 8 16 12 10 16 10 8" />
+                        </svg>
+                        Letterboxd
+                    </div>
+                    <p class="card-stat">Cinema & Reviews</p>
+                </div>
+                <span class="card-link-text">-> ver perfil</span>
+            </a>
+
+            <a href="https://www.albumoftheyear.org/user/rheise" target="_blank" class="interest-card card-aoty">
+                <div>
+                    <div class="card-title">
+                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <circle cx="12" cy="12" r="2" />
+                            <path d="M12 2a10 10 0 0 1 10 10" />
+                        </svg>
+                        AOTY
+                    </div>
+                    <p class="card-stat">Músicas & álbuns</p>
+                </div>
+                <span class="card-link-text">-> ver coleção</span>
+            </a>
+
+            <a href="https://instagram.com/vampiro_veraneio" target="_blank" class="interest-card card-insta">
+                <div>
+                    <div class="card-title">
+                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                        </svg>
+                        Instagram
+                    </div>
+                    <p class="card-stat">Poesias & Visuais</p>
+                </div>
+                <span class="card-link-text">-> seguir</span>
+            </a>
+        </div>
+
+        <div class="poetry-section">
+            <div class="poetry-header">
+                <h2 class="poetry-title">Buffer de Poesia</h2>
+                <span style="font-family: monospace; color: var(--text-muted); font-size: 0.8rem;">./reader.sh</span>
+            </div>
+
+            <div class="terminal-window">
+                <div class="terminal-bar">
+                    <span class="prompt-symbol">$ cat</span>
+                    <button onclick="carregarPoema('haikais')" class="cmd-btn" id="btn-haikais">haikais.md</button>
+                    <button onclick="carregarPoema('poemas')" class="cmd-btn" id="btn-poemas">poemas.md</button>
+                </div>
+
+                <div class="terminal-content">
+                    <h3 id="poem-title" class="poem-title-display"></h3>
+                    <span id="poem-date" class="poem-date"></span>
+
+                    <div id="poem-body" class="poem-body">
+                        Carregando sistema de arquivos...
+                    </div>
+
+                    <div class="terminal-footer">
+                        <br>
+                        <span style="color: #52525b;">~</span>
+                        <br>
+                        <span style="color: #52525b;">~</span> <span class="cursor"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 1rem;">
+                <button onclick="recarregarAtual()"
+                    style="background:none; border: 1px solid #333; color: #666; padding: 5px 10px; cursor: pointer; font-family: monospace; border-radius: 4px;">[
+                    Próximo Random ]</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const DB_PATH = './poemas/'; // Caminho da pasta
+        const EXTENSAO = '.md';      // Extensão dos arquivos
+        let arquivoAtual = '';       // Armazena qual arquivo está aberto
+
+        async function carregarPoema(arquivo) {
+            arquivoAtual = arquivo;
+
+            // Atualiza visual dos botões
+            document.querySelectorAll('.cmd-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.getElementById(`btn-${arquivo}`);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            const elTitle = document.getElementById('poem-title');
+            const elBody = document.getElementById('poem-body');
+            const elDate = document.getElementById('poem-date');
+
+            elBody.innerText = "Lendo do disco...";
+            elTitle.innerText = "";
+            elDate.innerText = "";
+
+            try {
+                // Cache busting para o GitHub Pages
+                const cacheBuster = new Date().getTime();
+                const url = `${DB_PATH}${arquivo}${EXTENSAO}?t=${cacheBuster}`;
+
+                const response = await fetch(url);
+
+                if (!response.ok) throw new Error(`Arquivo ${arquivo}.md não encontrado.`);
+
+                const text = await response.text();
+
+                // Divide pelo separador "---"
+                // Regex lida com espaços extras ao redor do separador
+                const poemas = text.split(/^\s*---\s*$/gm)
+                    .map(p => p.trim())
+                    .filter(p => p.length > 0);
+
+                if (poemas.length === 0) {
+                    elBody.innerText = "Buffer vazio.";
+                    return;
+                }
+
+                const poemaSorteado = poemas[Math.floor(Math.random() * poemas.length)];
+
+                // Processa o bloco (separa Título, Data e Conteúdo)
+                const dados = processarPoema(poemaSorteado, arquivo);
+
+                // Renderiza
+                // Se tiver título no texto, usa. Se não, deixa vazio para haikais (estética mais limpa)
+                elTitle.innerText = dados.titulo ? dados.titulo : '';
+
+                elBody.innerText = dados.conteudo;
+                elDate.innerText = `# ${dados.data} [${arquivo}]`;
+
+            } catch (erro) {
+                console.error(erro);
+                elBody.innerText = `Erro IO: ${erro.message}\nVerifique a pasta /poemas/`;
+            }
+        }
+
+        function processarPoema(textoBruto, nomeArquivo) {
+            let linhas = textoBruto.split('\n');
+            let titulo = null;
+            let data = new Date().toLocaleDateString('pt-BR'); // Fallback para hoje
+
+            // 1. Verifica se a PRIMEIRA linha é Título (começa com #)
+            if (linhas.length > 0 && linhas[0].trim().startsWith('#')) {
+                const primeiraLinha = linhas[0].trim();
+                // Remove o '#' e espaços extras
+                titulo = primeiraLinha.replace(/^#\s*/, '').trim();
+                linhas.shift(); // Remove a linha do título do array
+            }
+
+            // 2. Verifica se a ÚLTIMA linha é Data (começa com #)
+            if (linhas.length > 0) {
+                const ultimaLinha = linhas[linhas.length - 1].trim();
+                if (ultimaLinha.startsWith('#')) {
+                    data = ultimaLinha.replace('#', '').trim();
+                    linhas.pop(); // Remove a linha da data
+                }
+            }
+
+            const conteudo = linhas.join('\n').trim();
+            return { titulo, conteudo, data };
+        }
+
+        function recarregarAtual() {
+            if (arquivoAtual) carregarPoema(arquivoAtual);
+        }
+
+        // Inicia carregando os Haikais
+        window.onload = () => carregarPoema('haikais');
+    </script>
+
+</body>
+
+</html>
