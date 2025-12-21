@@ -14,16 +14,15 @@
             --text-main: #f4f4f5;
             --text-muted: #a1a1aa;
             --accent-green: #4ade80;
-            /* Verde Terminal */
             --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
             --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
             --nav-height: 60px;
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
@@ -132,7 +131,6 @@
             flex-direction: column;
             justify-content: space-between;
             height: 160px;
-            position: relative;
             overflow: hidden;
         }
 
@@ -141,6 +139,7 @@
             transform: translateY(-4px);
         }
 
+        /* Cores Específicas */
         .card-letterboxd:hover {
             border-color: #00e054;
         }
@@ -186,7 +185,7 @@
             opacity: 0.6;
         }
 
-        /* --- Área de Poemas (Terminal) --- */
+        /* --- Terminal Section --- */
         .poetry-section {
             margin-top: 4rem;
         }
@@ -210,13 +209,11 @@
             font-family: var(--font-mono);
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            min-height: 300px;
+            /* Removemos min-height fixa para deixar crescer com o conteúdo */
         }
 
-        /* Barra de Comandos do Terminal */
         .terminal-bar {
             background: #18181b;
-            /* Um pouco mais claro que o fundo */
             border-bottom: 1px solid var(--border);
             padding: 0.5rem 1rem;
             font-size: 0.8rem;
@@ -224,6 +221,9 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            position: sticky;
+            top: 0;
+            /* Barra gruda no topo se o terminal for muito grande */
         }
 
         .prompt-symbol {
@@ -231,7 +231,6 @@
             font-weight: bold;
         }
 
-        /* Botões Estilo Comando */
         .cmd-btn {
             background: none;
             border: none;
@@ -254,7 +253,7 @@
             background: rgba(74, 222, 128, 0.1);
         }
 
-        /* Conteúdo do Poema */
+        /* --- Estilos dos Poemas Listados --- */
         .terminal-content {
             padding: 2rem;
             color: #d4d4d8;
@@ -262,29 +261,51 @@
             line-height: 1.8;
         }
 
-        /* Elementos Dinâmicos */
+        /* Bloco individual de cada poema */
+        .poem-entry {
+            margin-bottom: 3rem;
+            /* Espaço entre poemas */
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .poem-title-display {
             color: #fff;
             font-size: 1.2rem;
             font-weight: bold;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.2rem;
             display: block;
         }
 
         .poem-date {
             color: #52525b;
             font-size: 0.75rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             display: block;
         }
 
         .poem-body {
-            margin-bottom: 2rem;
             white-space: pre-wrap;
-            /* Mantém a formatação visual dos poemas */
+            /* Mantém a quebra de linha do arquivo */
         }
 
-        /* Cursor piscando */
+        .poem-separator {
+            color: #52525b;
+            margin-top: 2rem;
+            user-select: none;
+        }
+
         .cursor {
             display: inline-block;
             width: 8px;
@@ -326,46 +347,21 @@
         <div class="interests-grid">
             <a href="https://letterboxd.com/RHeise" target="_blank" class="interest-card card-letterboxd">
                 <div>
-                    <div class="card-title">
-                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <polygon points="10 8 16 12 10 16 10 8" />
-                        </svg>
-                        Letterboxd
-                    </div>
+                    <div class="card-title">Letterboxd</div>
                     <p class="card-stat">Cinema & Reviews</p>
                 </div>
                 <span class="card-link-text">-> ver perfil</span>
             </a>
-
             <a href="https://www.albumoftheyear.org/user/rheise" target="_blank" class="interest-card card-aoty">
                 <div>
-                    <div class="card-title">
-                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <circle cx="12" cy="12" r="2" />
-                            <path d="M12 2a10 10 0 0 1 10 10" />
-                        </svg>
-                        AOTY
-                    </div>
+                    <div class="card-title">AOTY</div>
                     <p class="card-stat">Músicas & álbuns</p>
                 </div>
                 <span class="card-link-text">-> ver coleção</span>
             </a>
-
             <a href="https://instagram.com/vampiro_veraneio" target="_blank" class="interest-card card-insta">
                 <div>
-                    <div class="card-title">
-                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                        </svg>
-                        Instagram
-                    </div>
+                    <div class="card-title">Instagram</div>
                     <p class="card-stat">Poesias & Visuais</p>
                 </div>
                 <span class="card-link-text">-> seguir</span>
@@ -375,135 +371,121 @@
         <div class="poetry-section">
             <div class="poetry-header">
                 <h2 class="poetry-title">Buffer de Poesia</h2>
-                <span style="font-family: monospace; color: var(--text-muted); font-size: 0.8rem;">./reader.sh</span>
+                <span style="font-family: monospace; color: var(--text-muted); font-size: 0.8rem;">./cat_all.sh</span>
             </div>
 
             <div class="terminal-window">
                 <div class="terminal-bar">
                     <span class="prompt-symbol">$ cat</span>
-                    <button onclick="carregarPoema('haikais')" class="cmd-btn" id="btn-haikais">haikais.md</button>
-                    <button onclick="carregarPoema('poemas')" class="cmd-btn" id="btn-poemas">poemas.md</button>
+                    <button onclick="carregarTodosPoemas('haikais')" class="cmd-btn"
+                        id="btn-haikais">haikais.md</button>
+                    <button onclick="carregarTodosPoemas('poemas')" class="cmd-btn" id="btn-poemas">poemas.md</button>
                 </div>
 
-                <div class="terminal-content">
-                    <h3 id="poem-title" class="poem-title-display"></h3>
-                    <span id="poem-date" class="poem-date"></span>
-
-                    <div id="poem-body" class="poem-body">
-                        Carregando sistema de arquivos...
-                    </div>
-
-                    <div class="terminal-footer">
-                        <br>
-                        <span style="color: #52525b;">~</span>
-                        <br>
-                        <span style="color: #52525b;">~</span> <span class="cursor"></span>
-                    </div>
+                <div id="terminal-output" class="terminal-content">
+                    Carregando buffer...
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 1rem;">
-                <button onclick="recarregarAtual()"
-                    style="background:none; border: 1px solid #333; color: #666; padding: 5px 10px; cursor: pointer; font-family: monospace; border-radius: 4px;">[
-                    Próximo Random ]</button>
-            </div>
         </div>
 
     </div>
 
     <script>
-        const DB_PATH = './poemas/'; // Caminho da pasta
-        const EXTENSAO = '.md';      // Extensão dos arquivos
-        let arquivoAtual = '';       // Armazena qual arquivo está aberto
+        const DB_PATH = './poemas/';
+        const EXTENSAO = '.md';
 
-        async function carregarPoema(arquivo) {
-            arquivoAtual = arquivo;
-
-            // Atualiza visual dos botões
+        async function carregarTodosPoemas(arquivo) {
+            // UI Update
             document.querySelectorAll('.cmd-btn').forEach(btn => btn.classList.remove('active'));
             const activeBtn = document.getElementById(`btn-${arquivo}`);
             if (activeBtn) activeBtn.classList.add('active');
 
-            const elTitle = document.getElementById('poem-title');
-            const elBody = document.getElementById('poem-body');
-            const elDate = document.getElementById('poem-date');
-
-            elBody.innerText = "Lendo do disco...";
-            elTitle.innerText = "";
-            elDate.innerText = "";
+            const elOutput = document.getElementById('terminal-output');
+            elOutput.innerText = "Lendo arquivo completo...";
 
             try {
-                // Cache busting para o GitHub Pages
                 const cacheBuster = new Date().getTime();
                 const url = `${DB_PATH}${arquivo}${EXTENSAO}?t=${cacheBuster}`;
 
                 const response = await fetch(url);
-
-                if (!response.ok) throw new Error(`Arquivo ${arquivo}.md não encontrado.`);
+                if (!response.ok) throw new Error("Arquivo não encontrado.");
 
                 const text = await response.text();
 
-                // Divide pelo separador "---"
-                // Regex lida com espaços extras ao redor do separador
-                const poemas = text.split(/^\s*---\s*$/gm)
+                // Divide e limpa array
+                const listaPoemas = text.split(/^\s*---\s*$/gm)
                     .map(p => p.trim())
                     .filter(p => p.length > 0);
 
-                if (poemas.length === 0) {
-                    elBody.innerText = "Buffer vazio.";
+                if (listaPoemas.length === 0) {
+                    elOutput.innerText = "Buffer vazio.";
                     return;
                 }
 
-                const poemaSorteado = poemas[Math.floor(Math.random() * poemas.length)];
+                // --- GERAÇÃO DO HTML (MAP) ---
+                // Transforma cada bloco de texto em um bloco de HTML
+                const htmlPoemas = listaPoemas.map(poemaRaw => {
+                    const dados = processarPoema(poemaRaw);
 
-                // Processa o bloco (separa Título, Data e Conteúdo)
-                const dados = processarPoema(poemaSorteado, arquivo);
+                    // Se tiver título, cria a tag h3, senão string vazia
+                    const htmlTitulo = dados.titulo
+                        ? `<h3 class="poem-title-display">${dados.titulo}</h3>`
+                        : '';
 
-                // Renderiza
-                // Se tiver título no texto, usa. Se não, deixa vazio para haikais (estética mais limpa)
-                elTitle.innerText = dados.titulo ? dados.titulo : '';
+                    return `
+                        <div class="poem-entry">
+                            ${htmlTitulo}
+                            <span class="poem-date"># ${dados.data} [${arquivo}]</span>
+                            <div class="poem-body">${dados.conteudo}</div>
+                            <div class="poem-separator">~</div>
+                        </div>
+                    `;
+                }).join(''); // Junta tudo numa string só
 
-                elBody.innerText = dados.conteudo;
-                elDate.innerText = `# ${dados.data} [${arquivo}]`;
+                // Adiciona o cursor piscante apenas no final de tudo
+                const htmlFinal = htmlPoemas + `
+                    <br>
+                    <span class="cursor"></span>
+                `;
+
+                elOutput.innerHTML = htmlFinal;
 
             } catch (erro) {
                 console.error(erro);
-                elBody.innerText = `Erro IO: ${erro.message}\nVerifique a pasta /poemas/`;
+                elOutput.innerText = `Erro de Leitura: ${erro.message}`;
             }
         }
 
-        function processarPoema(textoBruto, nomeArquivo) {
+        function processarPoema(textoBruto) {
             let linhas = textoBruto.split('\n');
             let titulo = null;
-            let data = new Date().toLocaleDateString('pt-BR'); // Fallback para hoje
+            let data = new Date().toLocaleDateString('pt-BR'); // Fallback
 
-            // 1. Verifica se a PRIMEIRA linha é Título (começa com #)
+            // 1. Título na primeira linha (#)
             if (linhas.length > 0 && linhas[0].trim().startsWith('#')) {
-                const primeiraLinha = linhas[0].trim();
-                // Remove o '#' e espaços extras
-                titulo = primeiraLinha.replace(/^#\s*/, '').trim();
-                linhas.shift(); // Remove a linha do título do array
+                titulo = linhas[0].trim().replace(/^#\s*/, '').trim();
+                linhas.shift();
             }
 
-            // 2. Verifica se a ÚLTIMA linha é Data (começa com #)
+            // 2. Data na última linha (#)
             if (linhas.length > 0) {
                 const ultimaLinha = linhas[linhas.length - 1].trim();
                 if (ultimaLinha.startsWith('#')) {
                     data = ultimaLinha.replace('#', '').trim();
-                    linhas.pop(); // Remove a linha da data
+                    linhas.pop();
                 }
             }
 
-            const conteudo = linhas.join('\n').trim();
-            return { titulo, conteudo, data };
+            return {
+                titulo,
+                conteudo: linhas.join('\n').trim(),
+                data
+            };
         }
 
-        function recarregarAtual() {
-            if (arquivoAtual) carregarPoema(arquivoAtual);
-        }
-
-        // Inicia carregando os Haikais
-        window.onload = () => carregarPoema('haikais');
+        // Inicia carregando todos os Haikais
+        window.onload = () => carregarTodosPoemas('haikais');
     </script>
 
 </body>
