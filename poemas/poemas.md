@@ -68,3 +68,6 @@ Da última garoa  Da última garota    Da última gota
 Preciso de mais linhas   Preciso de mais lágrimas  Preciso de mais trágicas
 Preciso de mais páginas  Preciso de mais súbitas   Preciso de mais lúdicas
 Preciso de mais mágicas  Preciso de mais práticas  Preciso de mais rápidas
+---
+
+
