@@ -278,3 +278,8 @@ Pouca gente na cidade
 Fria a nostalgia invade
 Quando estava quente
 
+---
+O Sol e a Terra
+Em terra um girassol
+No espaço aquarela
+
