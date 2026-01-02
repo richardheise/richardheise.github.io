@@ -70,4 +70,30 @@ Preciso de mais páginas  Preciso de mais súbitas   Preciso de mais lúdicas
 Preciso de mais mágicas  Preciso de mais práticas  Preciso de mais rápidas
 ---
 
+# Viagem
 
+Liderando
+Platão
+Plutão
+Primavera verão
+Pitolomeu
+São tantos são
+É tudo teu?
+Meu?
+Verões
+Vem e vões
+Como aviões
+E eu também
+Assim, eu voo
+Eu nado
+nada
+sendo somente
+suave suor
+enquanto vemos
+O Sol raiante da alvorada
+Estremecer as janelas e fuzelagem
+De uma viagem de voo sem penas
+Sobre a estátua de Zeus e Atenas
+É tanta viagem
+em mentes tão pequenas
+---

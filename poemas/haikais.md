@@ -283,3 +283,13 @@ O Sol e a Terra
 Em terra um girassol
 No espaço aquarela
 
+---
+Ano após plano
+Plano após engano
+Engano após ano
+
+---
+Bem terminou
+Planjenado o final
+No que mal começou
+
