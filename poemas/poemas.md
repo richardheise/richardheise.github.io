@@ -27,7 +27,7 @@ uma troca de olhar
 E vira só entrega
 Que seja,
 me come logo
-na sua bandeija
+na sua bandeja
 ---
 
 # Bebado
@@ -76,7 +76,7 @@ Liderando
 Platão
 Plutão
 Primavera verão
-Pitolomeu
+Ptolomeu
 São tantos são
 É tudo teu?
 Meu?
@@ -96,4 +96,6 @@ De uma viagem de voo sem penas
 Sobre a estátua de Zeus e Atenas
 É tanta viagem
 em mentes tão pequenas
+
 ---
+

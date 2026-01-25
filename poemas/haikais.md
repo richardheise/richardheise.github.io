@@ -298,3 +298,9 @@ Um moinho é arte
 Girando o mundo
 Se triturar faz parte
 
+---
+Verão quente, areias, siris
+Nuvens, pires, amores no ar
+Vem e vão 
+As ondas do mar
+
