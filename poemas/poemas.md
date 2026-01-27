@@ -96,6 +96,22 @@ De uma viagem de voo sem penas
 Sobre a estátua de Zeus e Atenas
 É tanta viagem
 em mentes tão pequenas
+---
+
+# Não sobe a serra
+
+Verão quente, areias, siris
+Nuvens, pires, amores no ar
+Vem e vão
+As ondas do mar
 
 ---
 
+# Trovão
+
+Chuveiro chiando nos olhares
+Olhar que chuvista na alma
+Relâmpagos piscando em pares
+Garoa é tempestade calma
+
+---

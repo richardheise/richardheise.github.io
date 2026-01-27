@@ -304,3 +304,11 @@ Nuvens, pires, amores no ar
 Vem e vão 
 As ondas do mar
 
+---
+Chuveiro chiando nos olhares
+Olhar que chuvista na alma
+Relâmpagos piscando em pares
+Garoa é tempestade calma
+
+---
+
