@@ -305,10 +305,14 @@ Vem e vão
 As ondas do mar
 
 ---
-Chuveiro chiando nos olhares
-Olhar que chuvista na alma
-Relâmpagos piscando em pares
-Garoa é tempestade calma
+Chuveiro chiando nos olhos
+Olhar que chuvisca na alma
+Uma tempestade calma
 
 ---
 
+Memórias são o anzol de nossas vidas
+Engatam-se peixes, humanos e sentimentos
+Todos muito, muito suicídas
+
+---

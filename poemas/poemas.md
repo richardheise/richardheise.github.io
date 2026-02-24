@@ -115,3 +115,51 @@ Relâmpagos piscando em pares
 Garoa é tempestade calma
 
 ---
+
+# Saudade
+
+Que saudades do cheiro
+do shoyo
+carinho
+do molho
+da pele
+da perna
+da pelvis
+elvis
+da música
+dos lábios
+de cima 
+de baixo
+de todos os lados
+por todo meu corpo
+no seu
+cor
+que saudade da cor
+dos olhos
+do céu
+daquele papel com a compras
+soltas na mesa
+e a gente no quarto
+saudades do sapato
+no pé
+tira e põe
+vamos sair
+do vir e ir e ver
+rir
+que saudades do talvez
+de antes
+do será
+cerveja
+em régua na mesa
+saudades do metro
+quadrado
+do apê
+dos reis e rainhas
+das histórias
+fantásticas
+saudades mágicas
+de outroras vidinhas
+
+---
+
+
