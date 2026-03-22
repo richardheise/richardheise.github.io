@@ -310,9 +310,24 @@ Olhar que chuvisca na alma
 Uma tempestade calma
 
 ---
-
 Memórias são o anzol de nossas vidas
 Engatam-se peixes, humanos e sentimentos
-Todos muito, muito suicídas
+É tudo muito, muito suicída
 
 ---
+Não há competição.
+A mentira dos lábios
+Contra a verdade dos olhos
+
+---
+O erro dos lábios é tentar falar
+Enquanto a verdade toda já foi dita
+Pelo olhar
+
+---
+Somos seres de calçadas
+Calçando-nos nos fardos
+Pernas pra todo lado
+
+---
+
