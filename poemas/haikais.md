@@ -326,8 +326,33 @@ Pelo olhar
 
 ---
 Somos seres de calçadas
-Calçando-nos nos fardos
+Calçando-nos em fardos
 Pernas pra todo lado
+
+---
+Não te conto, nem te canto
+Fazendo as contas e amarrando as pontas
+Não é da sua conta, nem dos contos
+
+---
+Soluções que me escoro:
+Uns os problemas resolvem, 
+Noutros eu choro
+
+---
+Cerúleo horizontal
+Pedras e corais
+Verde vertical
+
+---
+Próximo ao peito
+Distante da mente
+Sorridente
+
+---
+As gotas de suor
+Ressoando na cabeça
+Febre intensa
 
 ---
 
