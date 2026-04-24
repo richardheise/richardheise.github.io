@@ -355,4 +355,21 @@ Ressoando na cabeça
 Febre intensa
 
 ---
+Nuvens e reações
+Químicas no cérebro
+Raios nos corações
 
+---
+Camada e camada e camada
+A fama da terra
+Lama mal formada
+
+---
+Cacos e caminhos
+Mindinhos e as feridas
+Partidos e partidas
+
+---
+Espia só
+Essa coroa de espinhos
+Cabe sempre outro nó
