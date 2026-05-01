@@ -370,6 +370,19 @@ Mindinhos e as feridas
 Partidos e partidas
 
 ---
-Espia só
+Es(x)pia só
 Essa coroa de espinhos
 Cabe sempre outro nó
+
+---
+Imensidão
+Céu e mar
+Presos no chão
+
+---
+Serotonina nos neurônios
+Explodem a cabeça
+Bombas de plutônio
+
+---
+
