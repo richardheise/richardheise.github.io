@@ -385,4 +385,7 @@ Explodem a cabeça
 Bombas de plutônio
 
 ---
+O barco à deriva e o vento.
+Os braços içam as velas, puxam os remos
+As vidas, os abraços e o rumo.
 
